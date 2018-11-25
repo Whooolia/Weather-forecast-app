@@ -11,16 +11,27 @@
 </head>
 
 <body>
-    <div>
-        <h1>Weather Forecast</h1>
-        <input type='text' class='locationInput' placeholder="Where are you now?">
-        <button type='submit' class='submit fas fa-search'></button>
-        <p>Location: <span id='location'></span></p>
-        <p>Weather icon : <span id='weather-icon'></span></p>
-        <p>Weather temperature : <span id='weather-temperature'></span></p>
-        <p>Weather summary : <span id='weather-summary'></span></p>
+    <header>
+        <section>
+            <h1>Weather Forecast</h1>
+            <input type='text' class='locationInput' placeholder="Where are you now?">
+            <button type='submit' class='submit fas fa-search'></button>
+        </section>
+        <section class='weatherInfo'>
+            <section class='leftside'>
+                <p>Weather icon : <span id='weather-icon'></span></p>
+                <p>Location: <span id='location'></span></p>
+            </section>      
+                    
+            <section class='rightside'>
+                <p>Weather temperature : <span id='weather-temperature'></span></p>
+                <p>Weather summary : <span id='weather-summary'></span></p>
+            </section>
+        </section>
+        
+        
        
-    </div>
+    </header>
 
 <script src="config.js" async></script>
 <script src="main.js" async></script>
