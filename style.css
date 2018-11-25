@@ -1,0 +1,51 @@
+body{
+    height: 100vh;
+    width: 100vw;
+    margin-top: 50px;
+    text-align: center;
+}
+
+div{
+    width: 1000px;
+    height: 500px;
+    background-image: linear-gradient(to right, #ffe259, #ffa751);
+    margin: auto;
+    padding-top: 30px;
+}
+
+h1{
+    font-size: 2.7rem;
+    font-weight: bold;
+    font-family: 'Francois One', sans-serif;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+
+.locationInput{
+    width: 270px;
+    border: none;
+    background: none;
+    border-bottom: solid black 1px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    outline: none;
+    font-size: 20px;
+}
+
+.submit{
+    font-size: 25px;
+    border: none;
+    background: none;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    outline: none;
+}
+
+.submit:hover{
+    font-size: 30px;
+    border: none;
+    background: none;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    outline: none;
+}
