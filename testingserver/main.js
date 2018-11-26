@@ -34,16 +34,16 @@ weatherRequest.send();
 
 var locationCall = function(){
     var locationRequest = new XMLHttpRequest();
-    var locationURL = 'https://cors-anywhere.herokuapp.com/https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyBChduinyJCvJnuC_Fby-HrRgqiAakuMp8';
+    var locationURL = 'https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyBChduinyJCvJnuC_Fby-HrRgqiAakuMp8';
 
     locationRequest.onreadystatechange = function(){
         if(this.readyState == 4 && this.status == 200){
             var locationObj = JSON.parse(locationRequest.responseText);
-            console.log(locationObj);
+            console.log('working');
         } else {
             console.log('sorry! THIS IS GOOGLE ERROR');
         }
     }
     locationRequest.open('GET', locationURL, true);
     locationRequest.send();
-}
+}ㅋㅋ
