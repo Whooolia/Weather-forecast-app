@@ -27,7 +27,17 @@ var weatherCall = function(latitude, longitude) {
       var location = weatherObj.timezone;
       var weatherSummary = weatherObj.currently.summary;
 
-      document.getElementById("weather-icon").textContent = weatherIcon;
+      // Icon changes
+    //   document.getElementById("weather-icon").textContent = weatherIcon;
+    //   if(weatherIcon == 'clear-day' || weatherIcon == 'clear-night'){
+    //     document.getElementsByClassName("sunnyIcon").style.display = 'block';
+    //   } else if(weatherIcon == 'partly-cloudy-night' || weatherIcon == 'partly-cloudy-day'){
+    //     document.getElementsByClassName("cloudyIcon").style.display = 'block';
+    //   }
+
+
+
+
       document.getElementById("weather-temperature").textContent = temperature;
       document.getElementById("location").textContent = location;
       document.getElementById("weather-summary").textContent = weatherSummary;

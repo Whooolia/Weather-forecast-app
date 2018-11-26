@@ -56,7 +56,7 @@ h1 {
 }
 
 .leftside {
-  background-color: yellow;
+  background-color: blue;
   width: 20vw;
   height: 50vh;
   margin-left: 100px;
@@ -67,4 +67,10 @@ h1 {
   width: 35vw;
   height: 50vh;
   margin-left: 100px;
+}
+
+img {
+ width: 80px;
+ height: 80px;
+ display: none;
 }
