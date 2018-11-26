@@ -1,70 +1,70 @@
-body{
-    height: 100vh;
-    width: 100vw;
-    margin-top: 50px;
-    text-align: center;
+body {
+  height: 100vh;
+  width: 100vw;
+  margin-top: 50px;
+  text-align: center;
 }
 
-header{
-    width: 75vw;
-    height: 75vh;
-    background-image: linear-gradient(to right, #ffe259, #ffa751);
-    margin: auto;
-    padding-top: 30px;
+header {
+  width: 75vw;
+  height: 75vh;
+  background-image: linear-gradient(to right, #ffe259, #ffa751);
+  margin: auto;
+  padding-top: 30px;
 }
 
-.weatherInfo{
-    display: flex;
-    margin-top: 20px;
+.weatherInfo {
+  display: flex;
+  margin-top: 20px;
 }
 
-h1{
-    font-size: 2.7rem;
-    font-weight: bold;
-    font-family: 'Francois One', sans-serif;
-    letter-spacing: 4px;
-    text-transform: uppercase;
+h1 {
+  font-size: 2.7rem;
+  font-weight: bold;
+  font-family: "Francois One", sans-serif;
+  letter-spacing: 4px;
+  text-transform: uppercase;
 }
 
-.locationInput{
-    width: 270px;
-    border: none;
-    background: none;
-    border-bottom: solid black 1px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    outline: none;
-    font-size: 20px;
+.locationInput {
+  width: 270px;
+  border: none;
+  background: none;
+  border-bottom: solid black 1px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  outline: none;
+  font-size: 20px;
 }
 
-.submit{
-    font-size: 25px;
-    border: none;
-    background: none;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    outline: none;
+.submit {
+  font-size: 25px;
+  border: none;
+  background: none;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  outline: none;
 }
 
-.submit:hover{
-    font-size: 30px;
-    border: none;
-    background: none;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    outline: none;
+.submit:hover {
+  font-size: 30px;
+  border: none;
+  background: none;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  outline: none;
 }
 
-.leftside{
-    background-color: yellow;
-    width: 20vw;
-    height: 50vh;
-    margin-left: 100px;
+.leftside {
+  background-color: yellow;
+  width: 20vw;
+  height: 50vh;
+  margin-left: 100px;
 }
 
-.rightside{
-    background-color: orange;
-    width: 35vw;
-    height: 50vh;
-    margin-left: 100px;
+.rightside {
+  background-color: orange;
+  width: 35vw;
+  height: 50vh;
+  margin-left: 100px;
 }

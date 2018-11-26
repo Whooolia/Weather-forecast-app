@@ -1,39 +1,47 @@
 <!DOCTYPE html>
 <html>
-<head> 
+  <head>
     <title>Weatehr App</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-    <link rel="stylesheet" type="text/css" href="reset.css">  
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <link href="https://fonts.googleapis.com/css?family=Francois+One" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-</head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="reset.css" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Francois+One"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+      integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+      crossorigin="anonymous"
+    />
+  </head>
 
-<body>
+  <body>
     <header>
-        <section>
-            <h1>Weather Forecast</h1>
-            <input type='text' class='locationInput' placeholder="Where are you now?">
-            <button type='submit' class='submit fas fa-search'></button>
+      <section>
+        <h1>Weather Forecast</h1>
+        <input
+          type="text"
+          class="locationInput"
+          placeholder="Where are you now?"
+        />
+        <button type="submit" class="submit fas fa-search"></button>
+      </section>
+      <section class="weatherInfo">
+        <section class="leftside">
+          <p>Weather icon : <span id="weather-icon"></span></p>
+          <p>Location: <span id="location"></span></p>
         </section>
-        <section class='weatherInfo'>
-            <section class='leftside'>
-                <p>Weather icon : <span id='weather-icon'></span></p>
-                <p>Location: <span id='location'></span></p>
-            </section>      
-                    
-            <section class='rightside'>
-                <p>Weather temperature : <span id='weather-temperature'></span></p>
-                <p>Weather summary : <span id='weather-summary'></span></p>
-            </section>
-        </section>
-        
-        
-       
-    </header>
 
-<script src="config.js" async></script>
-<script src="main.js" async></script>
-</body>
+        <section class="rightside">
+          <p>Weather temperature : <span id="weather-temperature"></span></p>
+          <p>Weather summary : <span id="weather-summary"></span></p>
+        </section>
+      </section>
+    </header>
+    <script src="config.js"></script>
+    <script src="main.js"></script>
+  </body>
 </html>
