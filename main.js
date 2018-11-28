@@ -4,8 +4,64 @@ function getWeatherInformation() {
   locationCall(locationInput);
 }
 
-// User can submit either pressing Enter or submit button 
-document.getElementsByClassName("submit")[0].addEventListener("click", function() {
+var images = {
+  cloudy: "./icons/cloudy.png",
+  "partly-cloudy-night": "./icons/cloudy.png",
+  sunny: "./icons/sunny.png",
+  "clear-day": "./icons/sunny.png",
+  "clear-night": "./icons/sunny.png",
+  rain: "./icons/rain.png",
+  snow: "./icons/snow.png",
+  sleet: "./icons/sleet.png",
+  windy: "./icons/windy.png",
+  foggy: "./icons/foggy.png"
+};
+
+function getWeatherIcon(weatherType) {
+  var weatherContainer = document.getElementById("weatherIcon");
+  if (weatherContainer.hasChildNodes()) {
+    weatherContainer.removeChild(weatherContainer.firstChild);
+  }
+  var elem = document.createElement("img");
+  weatherContainer.appendChild(elem);
+
+  elem.src = images[weatherType];
+
+  // switch (weatherType) {
+  //   case "cloudy":
+  //     elem.src = "./icons/cloudy.png";
+  //     break;
+  //   case "partly-cloudy-night":
+  //     elem.src = "./icons/cloudy.png";
+  //     break;
+  //   case "sunny":
+  //     elem.src = "./icons/sunny.png";
+  //     break;
+  //   case "clear-night":
+  //     elem.src = "./icons/sunny.png";
+  //     break;
+  //   case "rain":
+  //     elem.src = "./icons/rain.png";
+  //     break;
+  //   case "snow":
+  //     elem.src = "./icons/snow.png";
+  //     break;
+  //   case "sleet":
+  //     elem.src = "./icons/sleet.png";
+  //     break;
+  //   case "windy":
+  //     elem.src = "./icons/windy.png";
+  //     break;
+  //   case "foggy":
+  //     elem.src = "./icons/foggy.png";
+  //     break;
+  // }
+}
+
+// User can submit either pressing Enter or submit button
+document
+  .getElementsByClassName("submit")[0]
+  .addEventListener("click", function() {
     getWeatherInformation();
   });
 
@@ -24,23 +80,21 @@ var weatherCall = function(latitude, longitude) {
       var weatherObj = JSON.parse(weatherRequest.responseText);
       var temperature = weatherObj.currently.temperature;
       var weatherIcon = weatherObj.currently.icon;
+
       var location = weatherObj.timezone;
       var weatherSummary = weatherObj.currently.summary;
 
       // Icon changes
-    //   document.getElementById("weather-icon").textContent = weatherIcon;
-    //   if(weatherIcon == 'clear-day' || weatherIcon == 'clear-night'){
-    //     document.getElementsByClassName("sunnyIcon").style.display = 'block';
-    //   } else if(weatherIcon == 'partly-cloudy-night' || weatherIcon == 'partly-cloudy-day'){
-    //     document.getElementsByClassName("cloudyIcon").style.display = 'block';
-    //   }
-
-
-
-
+      //   document.getElementById("weather-icon").textContent = weatherIcon;
+      //   if(weatherIcon == 'clear-day' || weatherIcon == 'clear-night'){
+      //     document.getElementsByClassName("sunnyIcon").style.display = 'block';
+      //   } else if(weatherIcon == 'partly-cloudy-night' || weatherIcon == 'partly-cloudy-day'){
+      //     document.getElementsByClassName("cloudyIcon").style.display = 'block';
+      //   }
       document.getElementById("weather-temperature").textContent = temperature;
       document.getElementById("location").textContent = location;
       document.getElementById("weather-summary").textContent = weatherSummary;
+      getWeatherIcon(weatherIcon);
     } else {
       console.log("Sorry, this is error from weather API.");
     }
@@ -51,18 +105,18 @@ var weatherCall = function(latitude, longitude) {
 
 // Takes one argument to get latitude and longitude of the city(input)
 var locationCall = function(locationInput) {
-    var locationRequest = new XMLHttpRequest();
-    var locationURL = `https://maps.googleapis.com/maps/api/geocode/json?address=${locationInput}&key=AIzaSyAR6JW0Ad1M4ukQ5uPE4kKonM5HrrdyuIE`;
-    locationRequest.onreadystatechange = function() {
-      if (this.readyState == 4 && this.status == 200) {
-        var locationObj = JSON.parse(locationRequest.responseText);
-        var latitude = locationObj.results[0].geometry.location.lat;
-        var longitude = locationObj.results[0].geometry.location.lng;
-        weatherCall(latitude,longitude);
-      } else {
-        console.log("Sorry, this is error from location API.");
-      }
-    };
-    locationRequest.open("GET", locationURL, true);
-    locationRequest.send();
+  var locationRequest = new XMLHttpRequest();
+  var locationURL = `https://maps.googleapis.com/maps/api/geocode/json?address=${locationInput}&key=AIzaSyAR6JW0Ad1M4ukQ5uPE4kKonM5HrrdyuIE`;
+  locationRequest.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      var locationObj = JSON.parse(locationRequest.responseText);
+      var latitude = locationObj.results[0].geometry.location.lat;
+      var longitude = locationObj.results[0].geometry.location.lng;
+      weatherCall(latitude, longitude);
+    } else {
+      console.log("Sorry, this is error from location API.");
+    }
   };
+  locationRequest.open("GET", locationURL, true);
+  locationRequest.send();
+};
