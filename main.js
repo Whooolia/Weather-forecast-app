@@ -5,16 +5,17 @@ function getWeatherInformation() {
 }
 
 var images = {
-  cloudy: "./icons/cloudy.png",
+  'cloudy': "./icons/cloudy.png",
   "partly-cloudy-night": "./icons/cloudy.png",
-  sunny: "./icons/sunny.png",
+  "partly-cloudy-day": "./icons/cloudy.png",
+  'sunny': "./icons/sunny.png",
   "clear-day": "./icons/sunny.png",
   "clear-night": "./icons/sunny.png",
-  rain: "./icons/rain.png",
-  snow: "./icons/snow.png",
-  sleet: "./icons/sleet.png",
-  windy: "./icons/windy.png",
-  foggy: "./icons/foggy.png"
+  'rain': "./icons/rain.png",
+  'snow': "./icons/snow.png",
+  'sleet': "./icons/sleet.png",
+  'wind': "./icons/windy.png",
+  'fog': "./icons/foggy.png"
 };
 
 function getWeatherIcon(weatherType) {
