@@ -11,6 +11,7 @@ header {
   background-image: linear-gradient(to right, #ffe259, #ffa751);
   margin: auto;
   padding-top: 30px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .weatherInfo {
@@ -56,20 +57,28 @@ h1 {
 }
 
 .leftside {
-  background-color: blue;
+  background-color: rgba(255, 255, 255, 0.6);
   width: 20vw;
   height: 50vh;
   margin-left: 100px;
+  font-size: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .rightside {
-  background-color: orange;
+  background-color: rgba(255, 255, 255, 0.6);
   width: 35vw;
   height: 50vh;
   margin-left: 100px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 img {
   width: 80px;
   height: 80px;
+}
+
+#weatherIcon{
+  margin-top: 20px;
+  margin-bottom: 40px;
 }
