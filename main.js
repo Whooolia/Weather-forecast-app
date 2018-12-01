@@ -18,15 +18,36 @@ var images = {
   'fog': "./icons/foggy.png"
 };
 
+var backgrounds = {
+  'cloudy': "./background/cloudy.jpg",
+  "partly-cloudy-night": "./background/cloudy.jpg",
+  "partly-cloudy-day": "./background/cloudy.jpg",
+  'sunny': "./background/sunny.jpg",
+  "clear-day": "./background/sunny.jpg",
+  "clear-night": "./background/sunny.jpg",
+  'rain': "./background/rain.jpg",
+  'snow': "./background/snow.jpg",
+  // 'sleet': "./background/sleet.png",
+  // 'wind': "./background/windy.png",
+  // 'fog': "./background/foggy.png"
+}
+
 function getWeatherIcon(weatherType) {
   var weatherContainer = document.getElementById("weatherIcon");
-  if (weatherContainer.hasChildNodes()) {
+  if (weatherContainer.hasChildNodes()) { 
     weatherContainer.removeChild(weatherContainer.firstChild);
+  }
+  
+  if(document.body.style){
+    document.body.style.backgroundImage = 'none';
   }
   var elem = document.createElement("img");
   weatherContainer.appendChild(elem);
-
   elem.src = images[weatherType];
+
+  document.body.style.backgroundImage = `url(${backgrounds[weatherType]})`;
+  // elem.src = backgrounds[weatherType];
+ 
 
   // switch (weatherType) {
   //   case "cloudy":

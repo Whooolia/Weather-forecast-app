@@ -17,29 +17,32 @@
       crossorigin="anonymous"
     />
   </head>
-
+  
   <body>
-    <header>
-      <section>
-        <h1>Weather Forecast</h1>
-        <input
-          type="text"
-          class="locationInput"
-          placeholder="Where are you now?"
-        />
-        <button type="submit" class="submit fas fa-search"></button>
-      </section>
-      <section class="weatherInfo">
-        <section class="leftside">
-          <div id="weatherIcon"></div>
-          <p><span id="location"></span></p>
-          <p><span id="weather-temperature"></span></p>
-          <p><span id="weather-summary"></span></p>
-        </section>
-
-        <section class="rightside"></section>
-      </section>
-    </header>
+    <div class='secondBackground'>
+        <header>
+            <section>
+              <h1>Weather Forecast</h1>
+              <input
+                type="text"
+                class="locationInput"
+                placeholder="Where are you now?"
+              />
+              <button type="submit" class="submit fas fa-search"></button>
+            </section>
+            <section class="weatherInfo">
+              <section class="leftside">
+                <div id="weatherIcon"></div>
+                <p><span id="location"></span></p>
+                <p><span id="weather-temperature"></span></p>
+                <p><span id="weather-summary"></span></p>
+              </section>
+      
+              <section class="rightside"></section>
+            </section>
+          </header>
+    </div>
+    
     <script src="config.js"></script>
     <script src="main.js"></script>
   </body>

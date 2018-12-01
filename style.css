@@ -3,15 +3,26 @@ body {
   width: 100vw;
   margin-top: 50px;
   text-align: center;
+  background-repeat: no-repeat;
+  background-size: 100vw 100vh;
 }
+
+/* .secondBackground{
+  background-color: rgba(0, 5, 0, 0.486);
+  height: 550px;
+  padding-top: 30px;
+  width: 1100px;
+  margin: 0 auto;
+} */
 
 header {
   width: 75vw;
   height: 75vh;
-  background-image: linear-gradient(to right, #ffe259, #ffa751);
+  /* background-color: rgba(255, 255, 255, 0.3);   */
+  /* background-image: linear-gradient(to right, #ffe259, #ffa751, 0.4); */
   margin: auto;
   padding-top: 30px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
 }
 
 .weatherInfo {
@@ -28,10 +39,13 @@ h1 {
 }
 
 .locationInput {
-  width: 270px;
-  border: none;
-  background: none;
-  border-bottom: solid black 1px;
+  text-align: center;
+  width: 300px;
+  height: 46px;
+  border: 0px;
+  border-radius: 30px;
+  background: white;
+  box-shadow: none;
   margin-top: 20px;
   margin-bottom: 20px;
   outline: none;
@@ -60,16 +74,18 @@ h1 {
   background-color: rgba(255, 255, 255, 0.6);
   width: 20vw;
   height: 50vh;
-  margin-left: 100px;
+  margin-left: 130px;
   font-size: 20px;
+  border-radius: 10px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .rightside {
   background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 10px;
   width: 35vw;
   height: 50vh;
-  margin-left: 100px;
+  margin-left: 50px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
