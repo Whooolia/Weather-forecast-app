@@ -1,3 +1,33 @@
+// Current date
+function getDate() {
+  var today = new Date();
+  var day = today.getDate();
+  var month = today.getMonth()+1;
+  var year = today.getFullYear();
+  
+  if(day<10){
+    day = '0'+day;
+  }
+
+  if(month<10){
+    month = '0'+month;
+  }
+
+  //Get next 5 days
+  for(var i = 1; i<6; i++){
+    nextfiveDays = today.getDate()+i;
+    var fivedays = document.createElement('span');
+    document.querySelector('.rightside').appendChild(fivedays).textContent = nextfiveDays;
+    document.querySelector('.rightside').style.display = 'none';
+    
+  }
+
+  
+  var today = document.createElement("p");
+  document.querySelector('section').appendChild(today).textContent = `${day}-${month}-${year}`;
+}
+getDate();
+
 // Input go through google API and the results of location pass into weather API as arguments
 function getWeatherInformation() {
   var locationInput = document.getElementsByClassName("locationInput")[0].value;
@@ -26,7 +56,7 @@ var backgrounds = {
   "clear-day": "./background/sunny.jpg",
   "clear-night": "./background/sunny.jpg",
   'rain': "./background/rain.jpg",
-  'snow': "./background/snow.jpg",
+  'snow': "./background/snow1.jpg",
   // 'sleet': "./background/sleet.png",
   // 'wind': "./background/windy.png",
   // 'fog': "./background/foggy.png"
@@ -85,6 +115,7 @@ document
   .getElementsByClassName("submit")[0]
   .addEventListener("click", function() {
     getWeatherInformation();
+    document.querySelector('.rightside').style.display = 'block';
   });
 
 document.body.addEventListener("keyup", function(e) {
@@ -100,11 +131,16 @@ var weatherCall = function(latitude, longitude) {
   weatherRequest.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
       var weatherObj = JSON.parse(weatherRequest.responseText);
-      var temperature = weatherObj.currently.temperature;
+      var temperature = weatherObj.currently.temperature;    
       var weatherIcon = weatherObj.currently.icon;
 
       var location = weatherObj.timezone;
       var weatherSummary = weatherObj.currently.summary;
+
+
+      var daily = weatherObj.weekly;
+
+console.log(daily);
 
       // Icon changes
       //   document.getElementById("weather-icon").textContent = weatherIcon;
@@ -117,6 +153,7 @@ var weatherCall = function(latitude, longitude) {
       document.getElementById("location").textContent = location;
       document.getElementById("weather-summary").textContent = weatherSummary;
       getWeatherIcon(weatherIcon);
+    
     } else {
       console.log("Sorry, this is error from weather API.");
     }

@@ -1,7 +1,7 @@
 body {
-  height: 100vh;
-  width: 100vw;
-  margin-top: 50px;
+  height: 90vh;
+  width: 90vw;
+  margin-top: 40px;
   text-align: center;
   background-repeat: no-repeat;
   background-size: 100vw 100vh;
@@ -28,6 +28,8 @@ header {
 .weatherInfo {
   display: flex;
   margin-top: 20px;
+  display: flex;
+  flex-direction: column;
 }
 
 h1 {
@@ -71,21 +73,26 @@ h1 {
 }
 
 .leftside {
-  background-color: rgba(255, 255, 255, 0.6);
+  /* background-color: rgba(255, 255, 255, 0.6); */
   width: 20vw;
-  height: 50vh;
+  height: 40vh;
   margin-left: 130px;
   font-size: 20px;
   border-radius: 10px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  font-family: "Francois One", sans-serif;
+  /* letter-spacing: 1px; */
+  /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+  margin: 0 auto;
+  margin-bottom: 10px;
 }
 
 .rightside {
   background-color: rgba(255, 255, 255, 0.6);
+  margin: 0 auto;
   border-radius: 10px;
-  width: 35vw;
-  height: 50vh;
-  margin-left: 50px;
+  width: 50vw;
+  height: 17vh;
+  /* margin-left: 50px; */
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
@@ -96,5 +103,23 @@ img {
 
 #weatherIcon{
   margin-top: 20px;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
+}
+
+p{
+  color: white;
+  font-family: "Francois One", sans-serif;
+  font-size:25px;
+}
+
+.rightside span {
+  color: black;
+  font-family: "Francois One", sans-serif;
+  width: 30px;
+  font-size: 30px;
+  margin: 50px;
+  margin-top: 5px;
+  /* display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap; */
 }
