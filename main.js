@@ -1,30 +1,29 @@
 // Current date
 function getDate() {
   var today = new Date();
-  var day = today.getDate();
-  var month = today.getMonth()+1;
+  var day = today.getDay();
+  var date = today.getDate();
+  var month = today.getMonth();
   var year = today.getFullYear();
   
-  if(day<10){
-    day = '0'+day;
-  }
-
-  if(month<10){
-    month = '0'+month;
+  const monthNames = ["January", "February", "March", "April", "May", "June",
+  "July", "August", "September", "October", "November", "December"];
+  const dayNames = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+  const dayNamesShort = ['Mon','Tues','Wed','Thur','Fri','Sat','Sun'];
+  if(date<10){
+    date = '0'+ date;
   }
 
   //Get next 5 days
   for(var i = 1; i<6; i++){
-    nextfiveDays = today.getDate()+i;
+    nextfiveDays = day+i;
+    nextfiveDays = dayNamesShort[nextfiveDays];
     var fivedays = document.createElement('span');
     document.querySelector('.rightside').appendChild(fivedays).textContent = nextfiveDays;
     document.querySelector('.rightside').style.display = 'none';
-    
   }
-
-  
   var today = document.createElement("p");
-  document.querySelector('section').appendChild(today).textContent = `${day}-${month}-${year}`;
+  document.querySelector('section').appendChild(today).textContent = `${dayNames[day]} ${date} ${monthNames[month]}, ${year}`;
 }
 getDate();
 
@@ -138,9 +137,15 @@ var weatherCall = function(latitude, longitude) {
       var weatherSummary = weatherObj.currently.summary;
 
 
-      var daily = weatherObj.weekly;
+        // Get 5 days forecast!
+      var fiveDayForecast = weatherObj.daily.data.slice(0,5)[0].apparentTemperatureHigh
+      console.log(weatherObj.daily.data.slice(0,5));
+      var rightside = document.getElementsByClassName("rightside")[0];
+      var fiveDayElem = document.createElement('p');
+      rightside.appendChild(fiveDayElem);
+      fiveDayElem.textContent = fiveDayForecast;
 
-console.log(daily);
+ 
 
       // Icon changes
       //   document.getElementById("weather-icon").textContent = weatherIcon;

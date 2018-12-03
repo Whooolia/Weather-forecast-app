@@ -115,10 +115,10 @@ p{
 .rightside span {
   color: black;
   font-family: "Francois One", sans-serif;
-  width: 30px;
-  font-size: 30px;
-  margin: 50px;
+  width: 20px;
+  font-size: 15px;
   margin-top: 5px;
+  margin-left: 20px;
   /* display: flex;
   flex-direction: column;
   flex-wrap: nowrap; */
