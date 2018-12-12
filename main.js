@@ -1,3 +1,4 @@
+
 // Current date
 function getDate() {
   var today = new Date();
@@ -5,27 +6,30 @@ function getDate() {
   var date = today.getDate();
   var month = today.getMonth();
   var year = today.getFullYear();
+  console.log(day);
   
   const monthNames = ["January", "February", "March", "April", "May", "June",
   "July", "August", "September", "October", "November", "December"];
-  const dayNames = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+  const dayNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
   const dayNamesShort = ['Mon','Tues','Wed','Thur','Fri','Sat','Sun'];
   if(date<10){
     date = '0'+ date;
   }
-
+ 
   //Get next 5 days
-  for(var i = 1; i<6; i++){
+  for(var i = 0; i<5; i++){
     nextfiveDays = day+i;
-    nextfiveDays = dayNamesShort[nextfiveDays];
-    var fivedays = document.createElement('span');
-    document.querySelector('.rightside').appendChild(fivedays).textContent = nextfiveDays;
-    document.querySelector('.rightside').style.display = 'none';
+    //reminder - infinite 
+    // today: 12th -- 13/7 = 6, 14, 15, 16, 17
+    nextfiveDays = dayNamesShort[nextfiveDays % dayNamesShort.length];
+    var fivedays = document.createElement('p');
+    document.querySelector('.fiveDayForecast').appendChild(fivedays).textContent = nextfiveDays;
+    // document.querySelector('.fiveDayForecast').style.display = 'none';
   }
-  var today = document.createElement("p");
-  document.querySelector('section').appendChild(today).textContent = `${dayNames[day]} ${date} ${monthNames[month]}, ${year}`;
+  var today = document.querySelector(".today");
+  today.textContent = `${dayNames[day]} ${date} ${monthNames[month]}, ${year}`;
 }
-getDate();
+
 
 // Input go through google API and the results of location pass into weather API as arguments
 function getWeatherInformation() {
@@ -73,6 +77,7 @@ function getWeatherIcon(weatherType) {
   var elem = document.createElement("img");
   weatherContainer.appendChild(elem);
   elem.src = images[weatherType];
+  
 
   document.body.style.backgroundImage = `url(${backgrounds[weatherType]})`;
   // elem.src = backgrounds[weatherType];
@@ -114,12 +119,14 @@ document
   .getElementsByClassName("submit")[0]
   .addEventListener("click", function() {
     getWeatherInformation();
+    getDate();
     document.querySelector('.rightside').style.display = 'block';
   });
 
 document.body.addEventListener("keyup", function(e) {
   if (e.keyCode == 13) {
     getWeatherInformation();
+    getDate();
   }
 });
 
@@ -138,14 +145,26 @@ var weatherCall = function(latitude, longitude) {
 
 
         // Get 5 days forecast!
-      var fiveDayForecast = weatherObj.daily.data.slice(0,5)[0].apparentTemperatureHigh
-      console.log(weatherObj.daily.data.slice(0,5));
-      var rightside = document.getElementsByClassName("rightside")[0];
-      var fiveDayElem = document.createElement('p');
-      rightside.appendChild(fiveDayElem);
-      fiveDayElem.textContent = fiveDayForecast;
+      var fiveDayForecast = weatherObj.daily.data.slice(0,5)
+      var fivedayDiv = document.querySelector('.fiveDayForecast')
+      document.querySelector('.fiveDayForecast').innerHTML = '';
+  
 
- 
+      fiveDayForecast.forEach(function(e){
+        var fiveDayimgs = document.createElement('img');
+        fiveDayimgs.src = images[e.icon];
+        fivedayDiv.appendChild(fiveDayimgs);
+        fiveDayimgs.textContent = e.icon;
+      });
+
+      fiveDayForecast.forEach(function(e){
+        var fiveDayTemperature = document.createElement('p');
+        fivedayDiv.appendChild(fiveDayTemperature);
+        fiveDayTemperature.textContent = e.apparentTemperatureHigh;
+      });
+
+     
+    
 
       // Icon changes
       //   document.getElementById("weather-icon").textContent = weatherIcon;

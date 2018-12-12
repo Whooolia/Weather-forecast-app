@@ -91,7 +91,7 @@ h1 {
   margin: 0 auto;
   border-radius: 10px;
   width: 50vw;
-  height: 17vh;
+  /* height: 17vh; */
   /* margin-left: 50px; */
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
@@ -112,14 +112,28 @@ p{
   font-size:25px;
 }
 
-.rightside span {
+.fiveDayForecast {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  justify-items: center;
+}
+
+.rightside p{
   color: black;
   font-family: "Francois One", sans-serif;
-  width: 20px;
-  font-size: 15px;
-  margin-top: 5px;
-  margin-left: 20px;
-  /* display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap; */
+  width: 40px;
+  font-size: 1em;
+  padding-top: 10px;
+  /* text-align: center; */
+}
+
+/* .rightside div {
+  display: flex;
+  flex-direction: row;
+ 
+} */
+
+.rightside img{
+  height: 60px;
+  width: 60px;
 }
